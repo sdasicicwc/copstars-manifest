@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b101b">
+<meta name="description" content="Official CopStars (CPS) alliance manifesto — Police Chief">
+<title>CopStars (CPS) | Alliance Manifesto</title>
+<style>
+:root {
+  --bg: #0b101b;
+  --panel: #141c2b;
+  --gold: #d4af37;
+  --text: #f2f3f5;
+  --muted: #b2bac9;
+  --border: #354052;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, "Noto Sans", sans-serif;
+  line-height: 1.75;
+}
+header {
+  text-align: center;
+  padding: 45px 18px 30px;
+  background: linear-gradient(180deg,#1c2639,#0b101b);
+}
+.logo {
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--gold);
+  box-shadow: 0 0 35px #d4af3725;
+}
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: 11px;
+  margin-top: 20px;
+}
+h1 {
+  font-size: clamp(27px,6vw,46px);
+  margin: 12px 0;
+  letter-spacing: 2px;
+}
+.subtitle {
+  color: var(--muted);
+  max-width: 650px;
+  margin: auto;
+}
+.languages {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+.languages button {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  padding: 10px 15px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.languages button.active {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: #342c19;
+}
+main {
+  max-width: 820px;
+  margin: auto;
+  padding: 20px 18px 65px;
+}
+.intro {
+  font-size: 16px;
+  padding: 22px 0;
+  white-space: pre-line;
+}
+.section {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  padding: 24px;
+  margin: 18px 0;
+  border-radius: 8px;
+}
+.number {
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+h2 {
+  color: var(--gold);
+  font-size: 19px;
+  line-height: 1.4;
+  margin: 10px 0;
+}
+.section p {
+  margin: 0;
+  white-space: pre-line;
+}
+.closing {
+  text-align: center;
+  padding: 35px 15px;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+.closing h2 {
+  font-size: clamp(22px,5vw,32px);
+}
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 25px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+}
+@media(max-width:600px) {
+  header { padding-top: 30px; }
+  .section { padding: 18px; }
+  .languages button { padding: 9px 11px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">CPS</div>
+  <div class="eyebrow">POLICE CHIEF • OFFICIAL STATEMENT</div>
+  <h1>COPSTARS</h1>
+  <div class="subtitle" id="subtitle"></div>
+  <div class="languages">
+    <button data-lang="en">🇬🇧 EN</button>
+    <button data-lang="ru">🇷🇺 RU</button>
+    <button data-lang="tr">🇹🇷 TR</button>
+    <button data-lang="ko">🇰🇷 KO</button>
+  </div>
+</header>
+
+<main>
+  <div class="intro" id="intro"></div>
+  <div id="sections"></div>
+  <div class="closing">
+    <h2 id="closingTitle"></h2>
+    <p id="closingText"></p>
+  </div>
+</main>
+
+<footer>
+  COPSTARS (CPS) • POLICE CHIEF<br>
+  UNITY • STRENGTH • FAIRNESS
+</footer>
+
+<script>
+const translations = {
+ru: {
+ subtitle: "Официальный манифест альянса",
+ intro: `Уважаемые игроки сервера!
+
+Как вы могли заметить, наш альянс никогда не просил пощады и не умолял о перемирии, независимо от того, с кем и насколько долго мы воевали.
+
+Однако практика показала, что бесконечные войны истощают игроков, тормозят развитие альянсов и ослабляют весь сервер.
+
+Что касается противостояния с альянсом 707, никто и никогда не сможет заставить нас уважать друг друга. Уважение нельзя навязать силой или закрепить соглашением. Но взаимное уважение и соблюдение общих правил — совершенно разные вещи.
+
+Мы готовы принять перемирие не из-за слабости или страха, а потому, что многие игроки хотят спокойно развиваться и получать удовольствие от игры.
+
+Мир должен строиться на единых, справедливых и понятных для всех правилах.
+
+НАШИ ПРЕДЛОЖЕНИЯ:`,
+ sections: [
+  ["НЕПРИКОСНОВЕННОСТЬ РЕСУРСНЫХ ПЛИТОК",
+  `Любые атаки на игроков, собирающих ресурсы, должны быть запрещены независимо от принадлежности к NAP-10.
+
+Исключение составляют официальные игровые события, предусматривающие боевые действия. Во время таких событий все равны: NAP-10 не должен давать преимуществ или иммунитета. Каждый вправе атаковать армии противника, в том числе на ресурсных плитках.`],
+  ["СПРАВЕДЛИВОЕ РАСПРЕДЕЛЕНИЕ ОБЪЕКТОВ",
+  `В рамках NAP-10 должно быть согласовано распределение тюрем между участниками.
+
+Если на момент вступления в NAP-10 альянс уже владеет академией или лабораторией, другие участники соглашения не имеют права захватывать этот объект.`],
+  ["НИКАКИХ СКРЫТЫХ СОЮЗОВ И ПРИВИЛЕГИЙ",
+  `Защита NAP распространяется исключительно на альянсы, входящие в официальный список NAP-10.
+
+Никаких дополнительных защищённых альянсов, исключений или неофициальных договорённостей быть не должно.
+
+В дальнейшем список NAP может только сокращаться: NAP-7, NAP-5 и так далее.`],
+  ["АКАДЕМИИ НЕ ЯВЛЯЮТСЯ УЧАСТНИКАМИ NAP",
+  `Наличие у альянса NAP-10 собственной академии не означает, что она автоматически находится под защитой соглашения.
+
+Академии, не входящие непосредственно в официальный список NAP, могут подвергаться атакам на общих основаниях.`]
+ ],
+ closingTitle: "МЫ НЕ БОИМСЯ ВОЙНЫ. НО МЫ ВЫБИРАЕМ РАЗУМНЫЙ МИР!",
+ closingText: "Мы не требуем дружбы или уважения. Мы предлагаем одинаковые правила для всех — без двойных стандартов и привилегий. Мир — не капитуляция. Перемирие — не слабость."
+},
+en: {
+ subtitle: "Official Alliance Manifesto",
+ intro: `Dear players of our server!
+
+As you may have noticed, our alliance has never begged for mercy or requested a ceasefire, regardless of whom we fought or how long the war lasted.
+
+Experience has shown that endless wars exhaust players, slow alliance development and weaken the entire server.
+
+Regarding our conflict with Alliance 707, nobody can force us to respect each other. Respect cannot be imposed by force or written into an agreement. Respect and compliance with common rules are entirely different matters.
+
+We are willing to accept a ceasefire not out of weakness or fear, but because many players want to develop peacefully and enjoy the game.
+
+Peace must be based on clear, fair and equal rules for everyone.
+
+OUR PROPOSALS:`,
+ sections: [
+  ["PROTECTION OF RESOURCE TILES",
+  `Attacks against players gathering resources must be prohibited, regardless of whether they belong to NAP-10.
+
+The only exception is official in-game combat events. During such events, everyone is equal. NAP-10 must not provide immunity or special privileges. All players may attack enemy armies, including those on resource tiles.`],
+  ["FAIR DISTRIBUTION OF FACILITIES",
+  `Prisons must be distributed among NAP-10 members by mutual agreement.
+
+If an alliance already controls an academy or laboratory when joining NAP-10, no other NAP-10 member may capture that facility.`],
+  ["NO HIDDEN ALLIANCES OR PRIVILEGES",
+  `NAP protection applies exclusively to alliances officially listed in NAP-10.
+
+There must be no additional protected alliances, unofficial exceptions or hidden agreements.
+
+In the future, the NAP list may only become smaller: NAP-7, NAP-5 and so on.`],
+  ["ACADEMIES ARE NOT AUTOMATICALLY PROTECTED",
+  `Having an academy affiliated with a NAP-10 alliance does not automatically grant that academy NAP protection.
+
+Academy alliances that are not directly included in the official NAP list may be attacked under the general rules.`]
+ ],
+ closingTitle: "WE DO NOT FEAR WAR. BUT WE CHOOSE A REASONABLE PEACE!",
+ closingText: "We demand neither friendship nor respect. We propose equal rules for everyone, without double standards or privileges. Peace is not surrender. A ceasefire is not weakness."
+},
+tr: {
+ subtitle: "Resmî İttifak Manifestosu",
+ intro: `Sunucumuzun değerli oyuncuları!
+
+Fark etmiş olabileceğiniz gibi ittifakımız, kiminle veya ne kadar uzun süre savaşmış olursa olsun, hiçbir zaman merhamet dilenmedi ya da ateşkes talep etmedi.
+
+Ancak tecrübeler, bitmek bilmeyen savaşların oyuncuları yıprattığını, ittifakların gelişimini yavaşlattığını ve tüm sunucuyu zayıflattığını göstermiştir.
+
+707 İttifakı ile yaşadığımız çatışmaya gelince, hiç kimse bizi birbirimize saygı duymaya zorlayamaz. Saygı zorla dayatılamaz veya bir anlaşmayla sağlanamaz. Saygı ile ortak kurallara uymak tamamen farklı konulardır.
+
+Ateşkesi korktuğumuz veya zayıf olduğumuz için değil, birçok oyuncunun barış içinde gelişmek ve oyundan keyif almak istemesi nedeniyle kabul etmeye hazırız.
+
+Barış, herkes için açık, adil ve eşit kurallara dayanmalıdır.
+
+ÖNERİLERİMİZ:`,
+ sections: [
+  ["KAYNAK TOPLAMA ALANLARININ KORUNMASI",
+  `NAP-10 üyesi olup olmadığına bakılmaksızın kaynak toplayan oyunculara saldırılması yasaklanmalıdır.
+
+Tek istisna, savaşın serbest olduğu resmî oyun etkinlikleridir. Bu etkinliklerde herkes eşittir. NAP-10 üyeliği dokunulmazlık veya özel ayrıcalık sağlamamalıdır. Kaynak alanlarındaki ordular da dâhil olmak üzere düşman birliklerine saldırılabilir.`],
+  ["TESİSLERİN ADİL DAĞITIMI",
+  `Hapishanelerin dağılımı NAP-10 üyeleri arasında karşılıklı anlaşmayla belirlenmelidir.
+
+Bir ittifak NAP-10'a katıldığı sırada zaten bir akademi veya laboratuvarı kontrol ediyorsa, diğer NAP-10 üyeleri bu tesisi ele geçiremez.`],
+  ["GİZLİ İTTİFAKLARA VE AYRICALIKLARA HAYIR",
+  `NAP koruması yalnızca resmî NAP-10 listesinde yer alan ittifaklar için geçerlidir.
+
+Ek korunan ittifaklar, gayriresmî istisnalar veya gizli anlaşmalar olmamalıdır.
+
+Gelecekte NAP listesi yalnızca küçülebilir: NAP-7, NAP-5 ve benzeri.`],
+  ["AKADEMİ İTTİFAKLARI OTOMATİK OLARAK KORUNMAZ",
+  `Bir NAP-10 ittifakına bağlı akademi ittifakının bulunması, o akademiye otomatik olarak NAP koruması sağlamaz.
+
+Resmî NAP listesinde doğrudan yer almayan akademi ittifaklarına genel kurallar çerçevesinde saldırılabilir.`]
+ ],
+ closingTitle: "SAVAŞTAN KORKMUYORUZ. AMA MAKUL BİR BARIŞI SEÇİYORUZ!",
+ closingText: "Ne dostluk ne de saygı talep ediyoruz. Çifte standart ve ayrıcalık olmadan herkes için eşit kurallar öneriyoruz. Barış teslimiyet değildir. Ateşkes zayıflık değildir."
+},
+ko: {
+ subtitle: "공식 동맹 선언문",
+ intro: `서버의 모든 플레이어 여러분께!
+
+여러분도 보셨겠지만, 우리 동맹은 누구와 얼마나 오랫동안 전쟁을 치르든 자비를 구걸하거나 휴전을 요청한 적이 없습니다.
+
+그러나 끝없는 전쟁은 플레이어들을 지치게 하고 동맹의 성장을 늦추며 서버 전체를 약화시킨다는 사실이 드러났습니다.
+
+707 동맹과의 갈등에 관해서는 누구도 우리에게 서로를 존중하라고 강요할 수 없습니다. 존중은 힘으로 강요하거나 협정으로 만들어 낼 수 없습니다. 서로에 대한 존중과 공동 규칙의 준수는 전혀 다른 문제입니다.
+
+우리가 휴전을 받아들일 준비가 된 것은 약하거나 두렵기 때문이 아닙니다. 많은 플레이어가 평화롭게 성장하며 게임을 즐기기를 원하기 때문입니다.
+
+평화는 모두에게 명확하고 공정하며 동등한 규칙을 바탕으로 이루어져야 합니다.
+
+우리의 제안:`,
+ sections: [
+  ["자원 채집 타일 보호",
+  `NAP-10 소속 여부와 관계없이 자원을 채집하는 플레이어에 대한 공격은 금지되어야 합니다.
+
+단, 전투가 허용되는 공식 게임 이벤트는 예외입니다. 이러한 이벤트에서는 모두가 동등합니다. NAP-10 소속이라는 이유로 면책이나 특별한 혜택을 받아서는 안 됩니다. 자원 타일에 있는 적군을 포함하여 모든 적군을 공격할 수 있어야 합니다.`],
+  ["시설의 공정한 배분",
+  `감옥은 NAP-10 회원 동맹 간의 합의에 따라 배분되어야 합니다.
+
+어떤 동맹이 NAP-10에 가입할 당시 이미 아카데미 또는 연구소를 점령하고 있었다면, 다른 NAP-10 회원 동맹은 해당 시설을 빼앗을 수 없습니다.`],
+  ["비밀 동맹과 특혜 금지",
+  `NAP 보호는 공식 NAP-10 명단에 포함된 동맹에만 적용됩니다.
+
+추가 보호 동맹, 비공식 예외 또는 비밀 협정은 없어야 합니다.
+
+앞으로 NAP 명단은 NAP-7, NAP-5 등으로 축소될 수만 있으며 확대되어서는 안 됩니다.`],
+  ["아카데미 동맹은 자동 보호 대상이 아닙니다",
+  `NAP-10 동맹에 소속된 아카데미 동맹이라고 해서 자동으로 NAP 보호를 받는 것은 아닙니다.
+
+공식 NAP 명단에 직접 포함되지 않은 아카데미 동맹은 일반 규칙에 따라 공격받을 수 있습니다.`]
+ ],
+ closingTitle: "우리는 전쟁을 두려워하지 않습니다. 그러나 합리적인 평화를 선택합니다!",
+ closingText: "우리는 우정이나 존중을 요구하지 않습니다. 이중 잣대나 특혜 없이 모두에게 동등한 규칙을 제안합니다. 평화는 항복이 아닙니다. 휴전은 나약함이 아닙니다."
+}
+};
+
+function setLanguage(lang) {
+  if (!translations[lang]) lang = "en";
+  const t = translations[lang];
+  document.documentElement.lang = lang;
+  document.getElementById("subtitle").textContent = t.subtitle;
+  document.getElementById("intro").textContent = t.intro;
+  document.getElementById("closingTitle").textContent = t.closingTitle;
+  document.getElementById("closingText").textContent = t.closingText;
+
+  const container = document.getElementById("sections");
+  container.replaceChildren();
+  t.sections.forEach(([title, content], i) => {
+    const section = document.createElement("section");
+    section.className = "section";
+
+    const number = document.createElement("div");
+    number.className = "number";
+    number.textContent = String(i + 1).padStart(2, "0");
+
+    const heading = document.createElement("h2");
+    heading.textContent = title;
+
+    const paragraph = document.createElement("p");
+    paragraph.textContent = content;
+
+    section.append(number, heading, paragraph);
+    container.append(section);
+  });
+
+  document.querySelectorAll("[data-lang]").forEach(button => {
+    const active = button.dataset.lang === lang;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+
+  try { localStorage.setItem("cps-language", lang); } catch(e) {}
+}
+
+document.querySelectorAll("[data-lang]").forEach(button => {
+  button.addEventListener("click", () => setLanguage(button.dataset.lang));
+});
+
+let savedLanguage;
+try { savedLanguage = localStorage.getItem("cps-language"); } catch(e) {}
+const browserLanguage = navigator.language.split("-")[0].toLowerCase();
+setLanguage(savedLanguage || browserLanguage);
+</script>
+</body>
+</html>
