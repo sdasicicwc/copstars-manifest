@@ -134,6 +134,19 @@ footer {
   .section { padding: 18px; }
   .languages button { padding: 9px 11px; }
 }
+
+#poll { text-align:center; border-left:1px solid var(--border); }
+.poll-buttons { display:flex; gap:12px; }
+.poll-buttons button { flex:1; min-width:0; padding:16px 8px; border:1px solid var(--border); border-radius:8px; background:var(--bg); color:var(--text); cursor:pointer; font:inherit; overflow-wrap:anywhere; }
+.poll-buttons button:first-child { border-color:#45965e; }
+.poll-buttons button:last-child { border-color:#bd5555; }
+.poll-buttons button[aria-pressed=true] { outline:2px solid var(--gold); background:#342c19; }
+.poll-buttons button:disabled { opacity:.6; cursor:wait; }
+.poll-buttons strong { display:block; font-size:26px; }
+#poll-bar { display:flex; height:8px; border-radius:8px; overflow:hidden; background:var(--border); margin:18px 0 10px; }
+#poll-positive { background:#45965e; width:0; }
+#poll-negative { background:#bd5555; width:0; }
+#poll-summary,#poll-status { color:var(--muted); font-size:14px; }
 </style>
 </head>
 <body>
@@ -163,6 +176,16 @@ footer {
     <h2 id="closingTitle"></h2>
     <p id="closingText"></p>
   </div>
+  <section class="section" id="poll">
+    <h2 id="poll-title">Do you support SR-189?</h2>
+    <div class="poll-buttons">
+      <button id="poll-like" disabled aria-pressed="false">👍 <span id="poll-like-label">Support</span><strong id="poll-likes">—</strong></button>
+      <button id="poll-dislike" disabled aria-pressed="false">👎 <span id="poll-dislike-label">Oppose</span><strong id="poll-dislikes">—</strong></button>
+    </div>
+    <div id="poll-bar" aria-hidden="true"><div id="poll-positive"></div><div id="poll-negative"></div></div>
+    <p id="poll-summary" aria-live="polite"></p>
+    <p id="poll-status" role="status">Connecting…</p>
+  </section>
 </main>
 
 <footer>
@@ -447,6 +470,56 @@ let savedLanguage;
 try { savedLanguage = localStorage.getItem("cps-language"); } catch(e) {}
 const browserLanguage = navigator.language.split("-")[0].toLowerCase();
 setLanguage(savedLanguage || browserLanguage);
+</script>
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js';
+import { getAuth, signInAnonymously, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js';
+import { getFirestore, collection, doc, setDoc, onSnapshot } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js';
+const labels = {
+ en:['Do you support SR-189?','Support','Oppose','Total votes','Support','Connecting…','Your vote is saved.','Voting unavailable. Reload to retry.','Choose your vote.','Saving…'],
+ ru:['Поддерживаете ли вы SR-189?','Поддерживаю','Не поддерживаю','Всего голосов','Поддержка','Подключение…','Ваш голос сохранён.','Голосование недоступно. Обновите страницу.','Выберите свой голос.','Сохранение…'],
+ tr:['SR-189’u destekliyor musunuz?','Destekliyorum','Desteklemiyorum','Toplam oy','Destek','Bağlanıyor…','Oyunuz kaydedildi.','Oylama kullanılamıyor. Sayfayı yenileyin.','Oyunuzu seçin.','Kaydediliyor…'],
+ ko:['SR-189를 지지하십니까?','지지합니다','반대합니다','총 투표 수','지지율','연결 중…','투표가 저장되었습니다.','투표할 수 없습니다. 새로고침하세요.','투표를 선택하세요.','저장 중…'],
+ de:['Unterstützt du SR-189?','Dafür','Dagegen','Stimmen insgesamt','Zustimmung','Verbindung wird hergestellt…','Deine Stimme wurde gespeichert.','Abstimmung nicht verfügbar. Seite neu laden.','Wähle deine Stimme.','Wird gespeichert…'],
+ ja:['SR-189を支持しますか？','賛成','反対','総投票数','支持率','接続中…','投票が保存されました。','投票できません。再読み込みしてください。','投票を選択してください。','保存中…'],
+ fr:['Soutenez-vous SR-189 ?','Pour','Contre','Total des votes','Soutien','Connexion…','Votre vote est enregistré.','Vote indisponible. Rechargez la page.','Choisissez votre vote.','Enregistrement…']
+};
+const $ = id => document.getElementById(id);
+let uid, likes=0, dislikes=0, own=null, ready=false, busy=false, status=5;
+function render(){
+ const lang=document.documentElement.lang; const t=labels[lang]||labels.en;
+ const total=likes+dislikes, pct=total?likes/total*100:0;
+ $('poll-title').textContent=t[0]; $('poll-like-label').textContent=t[1]; $('poll-dislike-label').textContent=t[2];
+ $('poll-likes').textContent=ready?likes:'—'; $('poll-dislikes').textContent=ready?dislikes:'—';
+ $('poll-summary').textContent=ready?`${t[3]}: ${total} · ${t[4]}: ${total?new Intl.NumberFormat(lang,{maximumFractionDigits:1}).format(pct)+'%':'—'}`:'';
+ $('poll-positive').style.width=(ready?pct:0)+'%'; $('poll-negative').style.width=(ready&&total?100-pct:0)+'%';
+ $('poll-status').textContent=t[status];
+ for(const v of ['like','dislike']){const b=$('poll-'+v); b.disabled=!ready||busy; b.setAttribute('aria-pressed',String(own===v));}
+}
+new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+render();
+try {
+ const app=initializeApp({apiKey:'AIzaSyB2dXfCbjGFaVeSHTEwXudlN02UlYIJ9ZQ',authDomain:'copstars-manifest.firebaseapp.com',projectId:'copstars-manifest',storageBucket:'copstars-manifest.firebasestorage.app',messagingSenderId:'677094477353',appId:'1:677094477353:web:cba99d7d9e2a89a5b4d638'});
+ const auth=getAuth(app), db=getFirestore(app);
+ const fail=e=>{console.error(e);ready=false;busy=false;status=7;render();};
+ let unsubscribe;
+ onAuthStateChanged(auth, async user=>{
+  if(unsubscribe){unsubscribe();unsubscribe=null;}
+  if(!user){ready=false;render();try{await signInAnonymously(auth);}catch(e){fail(e);}return;}
+  uid=user.uid;
+  unsubscribe=onSnapshot(collection(db,'votes'),{includeMetadataChanges:true}, snap=>{
+   if(snap.metadata.fromCache&&!ready)return;
+   likes=0;dislikes=0;own=null;
+   snap.forEach(d=>{const v=d.data().vote;if(v==='like')likes++;if(v==='dislike')dislikes++;if(d.id===uid)own=v;});
+   ready=true;status=busy?9:own?6:8;render();
+  },fail);
+ },fail);
+ for(const v of ['like','dislike']) $('poll-'+v).addEventListener('click',async()=>{
+  if(!ready||busy||own===v)return;
+  busy=true;status=9;render();
+  try{await setDoc(doc(db,'votes',uid),{vote:v});own=v;status=6;}catch(e){console.error(e);status=7;}finally{busy=false;render();}
+ });
+}catch(e){console.error(e);status=7;render();}
 </script>
 </body>
 </html>
