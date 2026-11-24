@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0b101b">
-<meta name="description" content="Official CopStars (CPS) alliance manifesto — Police Chief">
-<title>CopStars (CPS) | Alliance Manifesto</title>
+<meta name="description" content="SR-189 — CPS alliance manifesto — Police Chief">
+<title>CopStars (CPS) Alliance | SR-189</title>
 <style>
 :root {
   --bg: #0b101b;
@@ -118,6 +118,7 @@ h2 {
   border-top: 1px solid var(--border);
   margin-top: 40px;
 }
+.closing p { white-space: pre-line; text-align: left; }
 .closing h2 {
   font-size: clamp(22px,5vw,32px);
 }
@@ -139,14 +140,19 @@ footer {
 
 <header>
   <div class="logo">CPS</div>
-  <div class="eyebrow">POLICE CHIEF • OFFICIAL STATEMENT</div>
-  <h1>COPSTARS</h1>
+  <div class="eyebrow" id="allianceName">COPSTARS (CPS) ALLIANCE</div>
+  <div class="subtitle">POLICE CHIEF • REGION 189</div>
+  <h1>SR-189</h1>
+  <div id="rulesName" style="font-weight:bold;margin-bottom:8px">Server Rules</div>
   <div class="subtitle" id="subtitle"></div>
   <div class="languages">
     <button data-lang="en">🇬🇧 EN</button>
     <button data-lang="ru">🇷🇺 RU</button>
     <button data-lang="tr">🇹🇷 TR</button>
     <button data-lang="ko">🇰🇷 KO</button>
+    <button data-lang="de">🇩🇪 DE</button>
+    <button data-lang="ja">🇯🇵 JA</button>
+    <button data-lang="fr">🇫🇷 FR</button>
   </div>
 </header>
 
@@ -160,170 +166,245 @@ footer {
 </main>
 
 <footer>
-  COPSTARS (CPS) • POLICE CHIEF<br>
+  COPSTARS (CPS) ALLIANCE • POLICE CHIEF<br>
   UNITY • STRENGTH • FAIRNESS
 </footer>
 
 <script>
 const translations = {
-ru: {
- subtitle: "Официальный манифест альянса",
- intro: `Уважаемые игроки сервера!
-
-Как вы могли заметить, наш альянс никогда не просил пощады и не умолял о перемирии, независимо от того, с кем и насколько долго мы воевали.
-
-Однако практика показала, что бесконечные войны истощают игроков, тормозят развитие альянсов и ослабляют весь сервер.
-
-Что касается противостояния с альянсом 707, никто и никогда не сможет заставить нас уважать друг друга. Уважение нельзя навязать силой или закрепить соглашением. Но взаимное уважение и соблюдение общих правил — совершенно разные вещи.
-
-Мы готовы принять перемирие не из-за слабости или страха, а потому, что многие игроки хотят спокойно развиваться и получать удовольствие от игры.
-
-Мир должен строиться на единых, справедливых и понятных для всех правилах.
-
-НАШИ ПРЕДЛОЖЕНИЯ:`,
- sections: [
-  ["НЕПРИКОСНОВЕННОСТЬ РЕСУРСНЫХ ПЛИТОК",
-  `Любые атаки на игроков, собирающих ресурсы, должны быть запрещены независимо от принадлежности к NAP-10.
-
-Исключение составляют официальные игровые события, предусматривающие боевые действия. Во время таких событий все равны: NAP-10 не должен давать преимуществ или иммунитета. Каждый вправе атаковать армии противника, в том числе на ресурсных плитках.`],
-  ["СПРАВЕДЛИВОЕ РАСПРЕДЕЛЕНИЕ ОБЪЕКТОВ",
-  `В рамках NAP-10 должно быть согласовано распределение тюрем между участниками.
-
-Если на момент вступления в NAP-10 альянс уже владеет академией или лабораторией, другие участники соглашения не имеют права захватывать этот объект.`],
-  ["НИКАКИХ СКРЫТЫХ СОЮЗОВ И ПРИВИЛЕГИЙ",
-  `Защита NAP распространяется исключительно на альянсы, входящие в официальный список NAP-10.
-
-Никаких дополнительных защищённых альянсов, исключений или неофициальных договорённостей быть не должно.
-
-В дальнейшем список NAP может только сокращаться: NAP-7, NAP-5 и так далее.`],
-  ["АКАДЕМИИ НЕ ЯВЛЯЮТСЯ УЧАСТНИКАМИ NAP",
-  `Наличие у альянса NAP-10 собственной академии не означает, что она автоматически находится под защитой соглашения.
-
-Академии, не входящие непосредственно в официальный список NAP, могут подвергаться атакам на общих основаниях.`]
- ],
- closingTitle: "МЫ НЕ БОИМСЯ ВОЙНЫ. НО МЫ ВЫБИРАЕМ РАЗУМНЫЙ МИР!",
- closingText: "Мы не требуем дружбы или уважения. Мы предлагаем одинаковые правила для всех — без двойных стандартов и привилегий. Мир — не капитуляция. Перемирие — не слабость."
-},
-en: {
- subtitle: "Official Alliance Manifesto",
- intro: `Dear players of our server!
-
-As you may have noticed, our alliance has never begged for mercy or requested a ceasefire, regardless of whom we fought or how long the war lasted.
-
-Experience has shown that endless wars exhaust players, slow alliance development and weaken the entire server.
-
-Regarding our conflict with Alliance 707, nobody can force us to respect each other. Respect cannot be imposed by force or written into an agreement. Respect and compliance with common rules are entirely different matters.
-
-We are willing to accept a ceasefire not out of weakness or fear, but because many players want to develop peacefully and enjoy the game.
-
-Peace must be based on clear, fair and equal rules for everyone.
-
-OUR PROPOSALS:`,
- sections: [
-  ["PROTECTION OF RESOURCE TILES",
-  `Attacks against players gathering resources must be prohibited, regardless of whether they belong to NAP-10.
-
-The only exception is official in-game combat events. During such events, everyone is equal. NAP-10 must not provide immunity or special privileges. All players may attack enemy armies, including those on resource tiles.`],
-  ["FAIR DISTRIBUTION OF FACILITIES",
-  `Prisons must be distributed among NAP-10 members by mutual agreement.
-
-If an alliance already controls an academy or laboratory when joining NAP-10, no other NAP-10 member may capture that facility.`],
-  ["NO HIDDEN ALLIANCES OR PRIVILEGES",
-  `NAP protection applies exclusively to alliances officially listed in NAP-10.
-
-There must be no additional protected alliances, unofficial exceptions or hidden agreements.
-
-In the future, the NAP list may only become smaller: NAP-7, NAP-5 and so on.`],
-  ["ACADEMIES ARE NOT AUTOMATICALLY PROTECTED",
-  `Having an academy affiliated with a NAP-10 alliance does not automatically grant that academy NAP protection.
-
-Academy alliances that are not directly included in the official NAP list may be attacked under the general rules.`]
- ],
- closingTitle: "WE DO NOT FEAR WAR. BUT WE CHOOSE A REASONABLE PEACE!",
- closingText: "We demand neither friendship nor respect. We propose equal rules for everyone, without double standards or privileges. Peace is not surrender. A ceasefire is not weakness."
-},
-tr: {
- subtitle: "Resmî İttifak Manifestosu",
- intro: `Sunucumuzun değerli oyuncuları!
-
-Fark etmiş olabileceğiniz gibi ittifakımız, kiminle veya ne kadar uzun süre savaşmış olursa olsun, hiçbir zaman merhamet dilenmedi ya da ateşkes talep etmedi.
-
-Ancak tecrübeler, bitmek bilmeyen savaşların oyuncuları yıprattığını, ittifakların gelişimini yavaşlattığını ve tüm sunucuyu zayıflattığını göstermiştir.
-
-707 İttifakı ile yaşadığımız çatışmaya gelince, hiç kimse bizi birbirimize saygı duymaya zorlayamaz. Saygı zorla dayatılamaz veya bir anlaşmayla sağlanamaz. Saygı ile ortak kurallara uymak tamamen farklı konulardır.
-
-Ateşkesi korktuğumuz veya zayıf olduğumuz için değil, birçok oyuncunun barış içinde gelişmek ve oyundan keyif almak istemesi nedeniyle kabul etmeye hazırız.
-
-Barış, herkes için açık, adil ve eşit kurallara dayanmalıdır.
-
-ÖNERİLERİMİZ:`,
- sections: [
-  ["KAYNAK TOPLAMA ALANLARININ KORUNMASI",
-  `NAP-10 üyesi olup olmadığına bakılmaksızın kaynak toplayan oyunculara saldırılması yasaklanmalıdır.
-
-Tek istisna, savaşın serbest olduğu resmî oyun etkinlikleridir. Bu etkinliklerde herkes eşittir. NAP-10 üyeliği dokunulmazlık veya özel ayrıcalık sağlamamalıdır. Kaynak alanlarındaki ordular da dâhil olmak üzere düşman birliklerine saldırılabilir.`],
-  ["TESİSLERİN ADİL DAĞITIMI",
-  `Hapishanelerin dağılımı NAP-10 üyeleri arasında karşılıklı anlaşmayla belirlenmelidir.
-
-Bir ittifak NAP-10'a katıldığı sırada zaten bir akademi veya laboratuvarı kontrol ediyorsa, diğer NAP-10 üyeleri bu tesisi ele geçiremez.`],
-  ["GİZLİ İTTİFAKLARA VE AYRICALIKLARA HAYIR",
-  `NAP koruması yalnızca resmî NAP-10 listesinde yer alan ittifaklar için geçerlidir.
-
-Ek korunan ittifaklar, gayriresmî istisnalar veya gizli anlaşmalar olmamalıdır.
-
-Gelecekte NAP listesi yalnızca küçülebilir: NAP-7, NAP-5 ve benzeri.`],
-  ["AKADEMİ İTTİFAKLARI OTOMATİK OLARAK KORUNMAZ",
-  `Bir NAP-10 ittifakına bağlı akademi ittifakının bulunması, o akademiye otomatik olarak NAP koruması sağlamaz.
-
-Resmî NAP listesinde doğrudan yer almayan akademi ittifaklarına genel kurallar çerçevesinde saldırılabilir.`]
- ],
- closingTitle: "SAVAŞTAN KORKMUYORUZ. AMA MAKUL BİR BARIŞI SEÇİYORUZ!",
- closingText: "Ne dostluk ne de saygı talep ediyoruz. Çifte standart ve ayrıcalık olmadan herkes için eşit kurallar öneriyoruz. Barış teslimiyet değildir. Ateşkes zayıflık değildir."
-},
-ko: {
- subtitle: "공식 동맹 선언문",
- intro: `서버의 모든 플레이어 여러분께!
-
-여러분도 보셨겠지만, 우리 동맹은 누구와 얼마나 오랫동안 전쟁을 치르든 자비를 구걸하거나 휴전을 요청한 적이 없습니다.
-
-그러나 끝없는 전쟁은 플레이어들을 지치게 하고 동맹의 성장을 늦추며 서버 전체를 약화시킨다는 사실이 드러났습니다.
-
-707 동맹과의 갈등에 관해서는 누구도 우리에게 서로를 존중하라고 강요할 수 없습니다. 존중은 힘으로 강요하거나 협정으로 만들어 낼 수 없습니다. 서로에 대한 존중과 공동 규칙의 준수는 전혀 다른 문제입니다.
-
-우리가 휴전을 받아들일 준비가 된 것은 약하거나 두렵기 때문이 아닙니다. 많은 플레이어가 평화롭게 성장하며 게임을 즐기기를 원하기 때문입니다.
-
-평화는 모두에게 명확하고 공정하며 동등한 규칙을 바탕으로 이루어져야 합니다.
-
-우리의 제안:`,
- sections: [
-  ["자원 채집 타일 보호",
-  `NAP-10 소속 여부와 관계없이 자원을 채집하는 플레이어에 대한 공격은 금지되어야 합니다.
-
-단, 전투가 허용되는 공식 게임 이벤트는 예외입니다. 이러한 이벤트에서는 모두가 동등합니다. NAP-10 소속이라는 이유로 면책이나 특별한 혜택을 받아서는 안 됩니다. 자원 타일에 있는 적군을 포함하여 모든 적군을 공격할 수 있어야 합니다.`],
-  ["시설의 공정한 배분",
-  `감옥은 NAP-10 회원 동맹 간의 합의에 따라 배분되어야 합니다.
-
-어떤 동맹이 NAP-10에 가입할 당시 이미 아카데미 또는 연구소를 점령하고 있었다면, 다른 NAP-10 회원 동맹은 해당 시설을 빼앗을 수 없습니다.`],
-  ["비밀 동맹과 특혜 금지",
-  `NAP 보호는 공식 NAP-10 명단에 포함된 동맹에만 적용됩니다.
-
-추가 보호 동맹, 비공식 예외 또는 비밀 협정은 없어야 합니다.
-
-앞으로 NAP 명단은 NAP-7, NAP-5 등으로 축소될 수만 있으며 확대되어서는 안 됩니다.`],
-  ["아카데미 동맹은 자동 보호 대상이 아닙니다",
-  `NAP-10 동맹에 소속된 아카데미 동맹이라고 해서 자동으로 NAP 보호를 받는 것은 아닙니다.
-
-공식 NAP 명단에 직접 포함되지 않은 아카데미 동맹은 일반 규칙에 따라 공격받을 수 있습니다.`]
- ],
- closingTitle: "우리는 전쟁을 두려워하지 않습니다. 그러나 합리적인 평화를 선택합니다!",
- closingText: "우리는 우정이나 존중을 요구하지 않습니다. 이중 잣대나 특혜 없이 모두에게 동등한 규칙을 제안합니다. 평화는 항복이 아닙니다. 휴전은 나약함이 아닙니다."
-}
+  "ru": {
+    "subtitle": "РЕГИОН 189 - ЗА СПРАВЕДЛИВУЮ ИГРУ!",
+    "intro": "Наша позиция\n\nАльянс CPS выступает за справедливую игру, равноправие и здоровую конкуренцию в регионе 189. Мы выступаем против экспансии альянса 707 и действующих правил NAP-10/12, которые, по нашему мнению, служат прежде всего интересам привилегированных игроков ведущих альянсов сервера. Регион принадлежит всем его игрокам, а не избранной группе альянсов. Каждый игрок должен иметь возможность развиваться, выбирать альянс и открыто выражать своё мнение.\n\nНаш общий противник - другой сервер\n\nМногие игроки боятся открыто выражать свою позицию, другие не хотят воевать. Но вспомним, в какую игру мы играем: Police Chief - не симулятор фермерского хозяйства, а игра, основанная на сражениях, стратегии и командной работе. Мы должны направлять основную боевую мощь против других серверов, а не истощать собственный регион внутренними войнами. Внутренняя конкуренция должна укреплять регион и готовить его к межсерверным сражениям.\n\nNAP и единые правила региона 189\n\nNAP (Non-Aggression Pact) - это пакт о ненападении между определённым количеством ведущих альянсов. Его предназначение - предотвращение внутренних войн, сохранение боевого потенциала и подготовка к межсерверным сражениям. По мнению нашего альянса CPS и других игроков, действующая система NAP-10/12 искажает смысл соглашения, превращая его в инструмент управления всем сервером в интересах ограниченного числа альянсов.\n\nNAP - это соглашение о ненападении, а не орган управления сервером!\n\nУчастие в NAP не должно давать права единолично устанавливать правила региона, монополизировать стратегические объекты, предоставлять необоснованные привилегии академиям, ограничивать права других игроков в собственных интересах или навязывать решения без открытого обсуждения.\n\nСоздание единых правил сервера - SR-189\n\nCPS предлагает внедрить SR-189 (Server Rules 189) - единый свод правил игры для всех участников региона, независимо от силы, численности, национальности, языка и позиции в рейтинге.\n\nОсновные принципы SR-189:\n\n• Гласность и прозрачность.\n\n• Демократическое принятие решений.\n\n• Равенство перед установленными правилами.\n\n• Справедливая конкуренция.\n\n• Справедливое распределение стратегических объектов.\n\n• Коллективная ответственность за развитие региона.\n\n• Приоритет межсерверных побед над внутренней борьбой за власть.\n\n\n\nNAP-10 может существовать в рамках SR-189 исключительно как соглашение о взаимном ненападении между ведущими альянсами. Все остальные отношения регулируются едиными правилами сервера.\n\nНе NAP должен определять правила сервера, а единые правила сервера должны определять условия существования NAP!\n\nОсновные правила SR-189",
+    "sections": [
+      [
+        "ЗАЩИТА РЕСУРСНЫХ ПЛИТОК",
+        "Запрещается атаковать любых игроков во время конфискации ресурсов с ресурсных плиток независимо от их принадлежности к альянсу или территории сбора ресурсов. Исключение составляют официальные игровые события на уничтожение войск, во время которых такие атаки разрешены для всех без исключения."
+      ],
+      [
+        "СПРАВЕДЛИВОЕ РАСПРЕДЕЛЕНИЕ ТЮРЕМ",
+        "Тюрьмы сервера должны справедливо распределяться между десятью ведущими альянсами на основе общего соглашения, без монополизации отдельными альянсами. Потому, что именно на эти альянсы ляжет основная ответственность за межсерверные сражения."
+      ],
+      [
+        "СВОБОДНАЯ БОРЬБА ЗА АКАДЕМИИ И ЛАБОРАТОРИИ",
+        "Все альянсы сервера имеют право сражаться за академии и лаборатории независимо от рейтинга. Боевые действия должны ограничиваться непосредственно этими объектами, но без атак на штабы других игроков включая разведку. Это необходимо для поддержания интереса к боевым действиям, развития тактических навыков и здоровой конкуренции."
+      ],
+      [
+        "ЕСТЕСТВЕННЫЙ ОТБОР И КОНСОЛИДАЦИЯ СИЛ",
+        "Ведущие альянсы вправе атаковать альянсы за пределами рейтинга TOP-10 при соблюдении остальных правил манифеста. Это способствует переходу активных игроков в сильные и организованные альянсы, способные эффективно участвовать в межсерверных сражениях. Малочисленные альянсы не смогут играть столь же значительную роль в межсерверной борьбе. При этом каждый альянс вправе развиваться и бороться за место среди ведущих. Здесь действует закон природы: выживает сильнейший. Наша цель - объединение боевого потенциала региона."
+      ],
+      [
+        "ЕДИНСТВО ВЕДУЩИХ АЛЬЯНСОВ",
+        "Между участниками TOP-10 недопустимы борьба за господство и боевые действия друг против друга, за исключением согласованной борьбы за объекты согласно пункту 3 и официальных событий согласно пункту 1. Ведущие альянсы должны решать разногласия дипломатическим путём и объединять силы для межсерверных побед. Этот принцип не требует дополнительных ограничений: общие интересы региона выше личных амбиций."
+      ],
+      [
+        "СТАТУС АКАДЕМИЙ АЛЬЯНСОВ",
+        "Ведущие альянсы имеют право создавать собственные академии для подготовки игроков. Однако академии не получают автоматически защиту. Любой альянс сервера вправе атаковать академии участников TOP-10 при соблюдении общих правил. Нападение на академию не должно служить основанием для конфликта с её основным альянсом."
+      ]
+    ],
+    "closingTitle": "Мы не сдались и не сдадимся!",
+    "closingText": "Призыв к игрокам региона 189\n\nПо нашему мнению, нынешние участники NAP-10/12 не заинтересованы в предложенных принципах равноправия, поскольку действующая система сохраняет их привилегии. Мы не согласны с таким порядком.\n\nАльянс CopStars (CPS) призывает сильнейших игроков, руководителей альянсов и всех сторонников честной игры поддержать внедрение правил и присоединиться к новому объединению SR-189, действующему в рамках единых правил сервера.\n\nМы выступаем за единые и прозрачные правила, открытое обсуждение, коллективное принятие решений, справедливое распределение стратегических объектов и свободу выбора альянса.\n\nМы призываем прекратить поддержку экспансии альянса 707 и добиваться его дипломатической изоляции в рамках игры до принятия общих справедливых правил. Ни один альянс не должен единолично определять судьбу сервера. Гласность, демократия и равноправие должны стать основой жизни региона.\n\nОни пытались уничтожить наш альянс, но не смогли. И никогда не смогут! CPS продолжает существовать, развиваться и бороться за свои принципы. Вместе с вами мы станем ещё большей силой.\n\nМы готовы к диалогу, но не к подчинению. Мы готовы к сотрудничеству, но только на условиях равноправия и взаимного уважения.\n\nУ альянса 707 есть два пути: принять предложенные справедливые условия либо столкнуться с объединённым игровым противостоянием, направленным на прекращение его господства, вплоть до распада самого альянса.\n\nНе бойтесь высказывать своё мнение. Не позволяйте другим решать за вас. Мы не против сильных альянсов - мы против злоупотребления силой!\n\nНАША СИЛА - В ЕДИНСТВЕ!\nНАША ЦЕЛЬ - СПРАВЕДЛИВОСТЬ!\nОДИН РЕГИОН. ЕДИНЫЕ ПРАВИЛА. ОБЩАЯ ПОБЕДА."
+  },
+  "en": {
+    "subtitle": "REGION 189 — FOR FAIR PLAY!",
+    "intro": "OUR POSITION\nCPS stands for fair play, equality and healthy competition in Region 189. We oppose the expansion of Alliance 707 and the current NAP-10/12 rules, which we believe primarily serve privileged players in leading alliances. The region belongs to all its players. Everyone should be free to develop, choose an alliance and express their opinion.\n\nOUR COMMON OPPONENT IS ANOTHER SERVER\nMany players fear speaking out; others do not want to fight. Police Chief is not a farming simulator but a game of battles, strategy and teamwork. Our main fighting power should be directed against other servers, not exhausted in internal wars. Internal competition should strengthen our region.\n\nNAP AND SERVER RULES\nNAP (Non-Aggression Pact) is an agreement between leading alliances to prevent internal wars, preserve combat strength and prepare for inter-server battles. We believe the current NAP-10/12 distorts this purpose by turning it into a tool for governing the server in the interests of a few alliances.\nNAP is a non-aggression agreement, not a governing body! Membership must not confer the right to impose rules unilaterally, monopolize strategic facilities, grant academies privileges or restrict other players without open discussion.\n\nSR-189 — SERVER RULES 189\nCPS proposes common rules for everyone, regardless of strength, size, nationality, language or ranking. Our principles are openness, transparency, democratic decision-making, equality before the rules, fair competition, fair distribution of strategic facilities, collective responsibility and priority for inter-server victories.\nNAP-10 may exist within SR-189 solely as a non-aggression agreement among leading alliances. All other relations are governed by server rules. Server rules must define NAP, not the other way around!\n\nMAIN RULES OF SR-189",
+    "sections": [
+      [
+        "RESOURCE TILE PROTECTION",
+        "Attacks on players confiscating resources from resource tiles are prohibited regardless of alliance or gathering territory. Official troop elimination events are the sole exception, when such attacks are permitted for everyone."
+      ],
+      [
+        "FAIR DISTRIBUTION OF PRISONS",
+        "Prisons must be fairly distributed among the ten leading alliances by common agreement, without monopolization, because these alliances will bear primary responsibility for inter-server battles."
+      ],
+      [
+        "FREE COMPETITION FOR ACADEMIES AND LABORATORIES",
+        "Every alliance may fight for academies and laboratories regardless of rank. Combat must be limited to these facilities; attacks and scouting against other players’ headquarters are prohibited. This maintains interest in combat, tactical skills and healthy competition."
+      ],
+      [
+        "NATURAL SELECTION AND CONSOLIDATION",
+        "Leading alliances may attack alliances outside TOP-10 subject to the other rules. This encourages active players to join strong, organized alliances capable of fighting other servers. Smaller alliances cannot play an equally significant role. Every alliance may grow and compete for a top position. Survival of the fittest: our goal is to consolidate the region’s combat potential."
+      ],
+      [
+        "UNITY OF LEADING ALLIANCES",
+        "TOP-10 alliances must not fight each other for dominance, except for agreed facility battles under rule 3 and official events under rule 1. Disputes must be resolved diplomatically and forces united for inter-server victories. Regional interests come before personal ambitions."
+      ],
+      [
+        "STATUS OF ALLIANCE ACADEMIES",
+        "Leading alliances may create training academies, but these receive no automatic protection. Any alliance may attack TOP-10 academies subject to the common rules. Attacking an academy must not be grounds for conflict with its parent alliance."
+      ]
+    ],
+    "closingTitle": "WE HAVE NOT SURRENDERED AND NEVER WILL!",
+    "closingText": "CALL TO REGION 189\nWe believe current NAP-10/12 members seek to preserve their privileges rather than embrace equality. We reject this order. CopStars (CPS) calls on leading players, alliance leaders and supporters of fair play to join the new SR-189 coalition and support common rules, open discussion, collective decisions, fair distribution and freedom of alliance choice.\nWe call for an end to support for Alliance 707’s expansion and its diplomatic isolation within the game until it accepts fair common rules. No alliance should dictate the server’s future. Openness, democracy and equality must prevail.\nThey tried to destroy us and failed. They never will succeed! Together we will become stronger. We are ready for dialogue, not submission, and cooperation on equal terms. Alliance 707 must accept fair conditions or face united in-game opposition to its dominance, up to the dissolution of the alliance. Speak out. We oppose abuse of power, not strong alliances.\n\nOUR STRENGTH IS UNITY! OUR GOAL IS FAIRNESS!\nONE REGION. ONE SET OF RULES. ONE VICTORY."
+  },
+  "tr": {
+    "subtitle": "BÖLGE 189 — ADİL OYUN İÇİN!",
+    "intro": "TUTUMUMUZ\nCPS, 189. bölgede adil oyunu, eşitliği ve sağlıklı rekabeti savunur. 707 ittifakının yayılmasına ve önde gelen ittifakların ayrıcalıklı oyuncularına hizmet ettiğini düşündüğümüz NAP-10/12 kurallarına karşıyız. Bölge tüm oyuncularındır. Herkes gelişme, ittifak seçme ve görüşünü açıklama hakkına sahiptir.\n\nORTAK RAKİBİMİZ DİĞER SUNUCUDUR\nBazı oyuncular konuşmaktan korkuyor, bazıları savaşmak istemiyor. Police Chief bir çiftçilik simülasyonu değil; savaş, strateji ve takım oyunudur. Gücümüzü iç savaşlarda tüketmek yerine diğer sunuculara yöneltmeliyiz. İç rekabet bölgemizi güçlendirmelidir.\n\nNAP VE SUNUCU KURALLARI\nNAP (Non-Aggression Pact), önde gelen ittifaklar arasında iç savaşları önlemek, savaş gücünü korumak ve sunucular arası savaşlara hazırlanmak için yapılan saldırmazlık anlaşmasıdır. Mevcut NAP-10/12 sisteminin bu amacı çarpıtarak az sayıda ittifakın çıkarına bir yönetim aracına dönüştüğünü düşünüyoruz.\nNAP bir saldırmazlık anlaşmasıdır, yönetim organı değildir! Üyelik tek taraflı kural koyma, stratejik tesisleri tekelleştirme, akademilere ayrıcalık tanıma veya açık tartışma olmadan oyuncuların haklarını kısıtlama yetkisi vermemelidir.\n\nSR-189 — SUNUCU KURALLARI\nCPS; güç, büyüklük, milliyet, dil ve sıralamadan bağımsız olarak herkes için ortak kurallar önerir. İlkelerimiz açıklık, şeffaflık, demokratik karar alma, kurallar önünde eşitlik, adil rekabet, stratejik tesislerin adil dağıtımı, ortak sorumluluk ve sunucular arası zaferlere öncelik vermektir.\nNAP-10, SR-189 kapsamında yalnızca önde gelen ittifaklar arasında saldırmazlık anlaşması olabilir. Diğer ilişkiler ortak kurallarla düzenlenir. NAP sunucu kurallarını değil, sunucu kuralları NAP'ı belirlemelidir!\n\nSR-189 TEMEL KURALLARI",
+    "sections": [
+      [
+        "KAYNAK ALANLARININ KORUNMASI",
+        "İttifak veya toplama bölgesi fark etmeksizin kaynak toplayan oyunculara saldırmak yasaktır. Tek istisna, birlik imhasına yönelik resmî oyun etkinlikleridir; bu sırada herkes saldırabilir."
+      ],
+      [
+        "HAPİSHANELERİN ADİL DAĞITIMI",
+        "Hapishaneler, sunucular arası savaşlarda temel sorumluluğu üstlenecek ilk on ittifak arasında ortak anlaşmayla, tekelleşme olmadan adil biçimde dağıtılmalıdır."
+      ],
+      [
+        "AKADEMİ VE LABORATUVARLAR İÇİN SERBEST REKABET",
+        "Sıralamadan bağımsız olarak tüm ittifaklar akademi ve laboratuvarlar için savaşabilir. Savaş bu tesislerle sınırlıdır; diğer oyuncuların karargâhlarına saldırı ve keşif yasaktır. Amaç savaş ilgisini, taktik becerileri ve sağlıklı rekabeti korumaktır."
+      ],
+      [
+        "DOĞAL SEÇİLİM VE GÜÇLERİN BİRLEŞMESİ",
+        "Önde gelen ittifaklar diğer kurallara uyarak TOP-10 dışındaki ittifaklara saldırabilir. Böylece aktif oyuncular sunucular arası savaşlara katılabilecek güçlü ittifaklarda birleşir. Küçük ittifaklar aynı ölçüde rol oynayamaz. Her ittifak gelişebilir ve üst sıralara çıkabilir. Doğanın yasası: en güçlü hayatta kalır. Amaç bölgenin savaş gücünü birleştirmektir."
+      ],
+      [
+        "ÖNDE GELEN İTTİFAKLARIN BİRLİĞİ",
+        "TOP-10 ittifakları, 3. kuraldaki anlaşmalı tesis savaşları ve 1. kuraldaki resmî etkinlikler dışında birbirleriyle savaşmamalıdır. Anlaşmazlıklar diplomasiyle çözülmeli, güçler sunucular arası zaferler için birleşmelidir. Bölgenin çıkarları kişisel hırslardan üstündür."
+      ],
+      [
+        "İTTİFAK AKADEMİLERİNİN STATÜSÜ",
+        "Önde gelen ittifaklar eğitim akademileri kurabilir ancak bunlar otomatik koruma kazanmaz. Her ittifak ortak kurallara uyarak TOP-10 akademilerine saldırabilir. Akademiye saldırı ana ittifakla çatışma nedeni olmamalıdır."
+      ]
+    ],
+    "closingTitle": "TESLİM OLMADIK, ASLA OLMAYACAĞIZ!",
+    "closingText": "189. BÖLGEYE ÇAĞRIMIZ\nMevcut NAP-10/12 üyelerinin eşitlik yerine ayrıcalıklarını korumak istediğini düşünüyoruz. CopStars (CPS), güçlü oyuncuları, ittifak liderlerini ve adil oyun taraftarlarını yeni SR-189 birliğine katılmaya çağırıyor. Ortak kuralları, açık tartışmayı, ortak kararları, adil dağıtımı ve ittifak seçme özgürlüğünü savunuyoruz.\n707 ittifakının yayılmasına verilen desteğin sona ermesini ve adil kuralları kabul edene kadar oyun içinde diplomatik olarak izole edilmesini istiyoruz. Hiçbir ittifak sunucunun kaderini tek başına belirlememelidir. Açıklık, demokrasi ve eşitlik egemen olmalıdır.\nBizi yok etmeye çalıştılar, başaramadılar ve asla başaramayacaklar! Birlikte daha güçlü olacağız. Diyaloğa hazırız, boyun eğmeye değil. 707 ya adil koşulları kabul etmeli ya da hâkimiyetini sona erdirmeye, gerekirse ittifakın dağılmasına yönelik birleşik oyun içi mücadeleyle karşılaşmalıdır. Görüşünüzü açıklamaktan korkmayın. Güçlü ittifaklara değil, gücün kötüye kullanılmasına karşıyız.\n\nGÜCÜMÜZ BİRLİK, HEDEFİMİZ ADALET!\nTEK BÖLGE. ORTAK KURALLAR. ORTAK ZAFER."
+  },
+  "ko": {
+    "subtitle": "189 지역 — 공정한 게임을 위하여!",
+    "intro": "우리의 입장\nCPS는 189 지역의 공정한 게임, 평등, 건전한 경쟁을 지지합니다. 우리는 707 동맹의 세력 확장과 상위 동맹의 특권층에 유리하다고 판단하는 현행 NAP-10/12 규칙에 반대합니다. 지역은 모든 플레이어의 것입니다. 누구나 성장하고 동맹을 선택하며 자유롭게 의견을 표현할 권리가 있습니다.\n\n우리의 공동 상대는 다른 서버입니다\n많은 플레이어가 의견을 밝히기를 두려워하고, 일부는 전쟁을 원하지 않습니다. Police Chief는 농장 게임이 아니라 전투, 전략, 협동의 게임입니다. 내부 전쟁으로 전력을 소모하지 말고 다른 서버와의 전투에 집중해야 합니다. 내부 경쟁은 지역을 강화해야 합니다.\n\nNAP와 서버 규칙\nNAP(Non-Aggression Pact)는 상위 동맹 간 내부 전쟁을 방지하고 전력을 보존하며 서버 간 전투를 준비하기 위한 불가침 협정입니다. 우리는 현행 NAP-10/12가 소수 동맹의 이익을 위한 서버 통치 수단으로 변질되었다고 생각합니다.\nNAP는 불가침 협정이지 통치 기관이 아닙니다! 가입을 이유로 일방적인 규칙 제정, 전략 시설 독점, 아카데미 특혜 또는 공개 논의 없는 권리 제한이 허용되어서는 안 됩니다.\n\nSR-189 — 서버 공동 규칙\nCPS는 전력, 규모, 국적, 언어, 순위와 관계없이 모든 플레이어에게 적용되는 공동 규칙을 제안합니다. 원칙은 공개성, 투명성, 민주적 의사 결정, 규칙 앞의 평등, 공정한 경쟁과 전략 시설 배분, 공동 책임, 서버 간 승리 우선입니다.\nNAP-10은 SR-189 내에서 상위 동맹 간 불가침 협정으로만 존재할 수 있습니다. 다른 관계는 서버 공동 규칙에 따릅니다. NAP가 서버 규칙을 정하는 것이 아니라 서버 규칙이 NAP의 조건을 정해야 합니다!\n\nSR-189 주요 규칙",
+    "sections": [
+      [
+        "자원 타일 보호",
+        "동맹 소속이나 채집 지역과 관계없이 자원 채집 중인 플레이어에 대한 공격은 금지됩니다. 공식 병력 섬멸 이벤트만 예외이며 이때는 누구나 공격할 수 있습니다."
+      ],
+      [
+        "감옥의 공정한 배분",
+        "서버 간 전투의 주요 책임을 맡을 상위 10개 동맹에 감옥을 공동 합의로 공정하게 배분하며 독점을 금지합니다."
+      ],
+      [
+        "아카데미 및 연구소 자유 경쟁",
+        "모든 동맹은 순위와 관계없이 아카데미와 연구소를 두고 싸울 수 있습니다. 전투는 해당 시설에 한정되며 다른 플레이어의 본부 공격과 정찰은 금지됩니다. 이는 전투에 대한 흥미, 전술 능력과 건전한 경쟁을 유지하기 위함입니다."
+      ],
+      [
+        "자연 선택과 전력 통합",
+        "상위 동맹은 다른 규칙을 준수하면서 TOP-10 밖의 동맹을 공격할 수 있습니다. 활동적인 플레이어가 서버 간 전투에 참여할 강하고 조직적인 동맹에 합류하도록 유도합니다. 소규모 동맹은 같은 수준의 역할을 하기 어렵습니다. 모든 동맹은 성장하고 상위권에 도전할 수 있습니다. 적자생존의 원칙에 따라 지역 전력을 통합하는 것이 목표입니다."
+      ],
+      [
+        "상위 동맹의 단결",
+        "TOP-10 동맹은 제3항에 따른 합의된 시설 전투와 제1항의 공식 이벤트를 제외하고 서로 싸우거나 패권을 다투어서는 안 됩니다. 분쟁은 외교적으로 해결하고 서버 간 승리를 위해 힘을 합쳐야 합니다. 지역의 이익이 개인의 야망보다 우선합니다."
+      ],
+      [
+        "동맹 아카데미의 지위",
+        "상위 동맹은 훈련용 아카데미 동맹을 만들 수 있지만 자동 보호는 받지 않습니다. 모든 동맹은 공동 규칙에 따라 TOP-10의 아카데미 동맹을 공격할 수 있습니다. 아카데미 공격은 모동맹과의 분쟁 사유가 되어서는 안 됩니다."
+      ]
+    ],
+    "closingTitle": "우리는 항복하지 않았으며 앞으로도 항복하지 않을 것입니다!",
+    "closingText": "189 지역 플레이어 여러분께\n현행 NAP-10/12 회원들은 평등보다 특권 유지에 관심이 있다고 생각합니다. CopStars (CPS)는 강한 플레이어, 동맹 지도자와 공정한 게임을 지지하는 모든 분에게 새로운 SR-189 연합에 참여할 것을 요청합니다. 공동 규칙, 공개 토론, 공동 결정, 공정한 시설 배분과 동맹 선택의 자유를 지지합니다.\n707 동맹의 확장 정책에 대한 지지를 중단하고 공정한 공동 규칙을 수용할 때까지 게임 내에서 외교적으로 고립시킬 것을 촉구합니다. 어느 동맹도 서버의 운명을 독단적으로 결정해서는 안 됩니다. 공개성, 민주주의와 평등이 우선되어야 합니다.\n그들은 우리 동맹을 무너뜨리려 했지만 실패했습니다. 앞으로도 성공하지 못할 것입니다! 여러분과 함께라면 더 강해질 것입니다. 대화에는 열려 있지만 복종하지는 않습니다. 707은 공정한 조건을 받아들이거나 패권 종식과 필요시 동맹 해체를 목표로 하는 게임 내 연합 저항에 직면해야 합니다. 의견을 밝히기를 두려워하지 마십시오. 우리는 강한 동맹이 아니라 힘의 남용에 반대합니다.\n\n우리의 힘은 단결! 우리의 목표는 공정함!\n하나의 지역. 공동 규칙. 공동 승리."
+  },
+  "de": {
+    "subtitle": "REGION 189 – FÜR FAIRPLAY!",
+    "intro": "UNSERE POSITION\nCPS steht für Fairplay, Gleichberechtigung und gesunden Wettbewerb in Region 189. Wir lehnen die Expansion der Allianz 707 und die derzeitigen NAP-10/12-Regeln ab, die unserer Ansicht nach vor allem den privilegierten Spielern der führenden Allianzen dienen. Die Region gehört allen Spielern. Jeder soll sich entwickeln, seine Allianz frei wählen und seine Meinung äußern können.\n\nUNSER GEMEINSAMER GEGNER IST EIN ANDERER SERVER\nViele Spieler fürchten sich, ihre Meinung zu äußern; andere wollen nicht kämpfen. Police Chief ist keine Landwirtschaftssimulation, sondern ein Spiel der Kämpfe, Strategie und Teamarbeit. Unsere Kampfkraft sollte sich gegen andere Server richten, statt durch interne Kriege erschöpft zu werden. Interner Wettbewerb soll unsere Region stärken.\n\nNAP UND SERVERREGELN\nNAP (Non-Aggression Pact) ist ein Nichtangriffspakt zwischen führenden Allianzen, um interne Kriege zu verhindern, Kampfkraft zu erhalten und serverübergreifende Kämpfe vorzubereiten. Unserer Ansicht nach verfälscht das aktuelle NAP-10/12 diesen Zweck und macht den Pakt zu einem Herrschaftsinstrument zugunsten weniger Allianzen.\nNAP ist ein Nichtangriffspakt, kein Regierungsorgan! Die Mitgliedschaft darf nicht dazu berechtigen, einseitig Regeln festzulegen, strategische Einrichtungen zu monopolisieren, Akademien zu privilegieren oder andere Spieler ohne offene Diskussion einzuschränken.\n\nSR-189 – SERVER RULES 189\nCPS schlägt gemeinsame Regeln für alle vor, unabhängig von Stärke, Größe, Nationalität, Sprache oder Rang. Unsere Grundsätze sind Offenheit, Transparenz, demokratische Entscheidungen, Gleichheit vor den Regeln, fairer Wettbewerb, gerechte Verteilung strategischer Einrichtungen, gemeinsame Verantwortung und Vorrang serverübergreifender Siege.\nNAP-10 darf innerhalb von SR-189 ausschließlich als Nichtangriffspakt der führenden Allianzen bestehen. Alle übrigen Beziehungen unterliegen den Serverregeln. Die Serverregeln müssen den NAP bestimmen, nicht umgekehrt!\n\nHAUPTREGELN VON SR-189",
+    "sections": [
+      [
+        "SCHUTZ DER RESSOURCENFELDER",
+        "Angriffe auf Spieler beim Sammeln von Ressourcen sind unabhängig von Allianz oder Sammelgebiet verboten. Einzige Ausnahme sind offizielle Events zur Vernichtung von Truppen, bei denen solche Angriffe allen erlaubt sind."
+      ],
+      [
+        "GERECHTE VERTEILUNG DER GEFÄNGNISSE",
+        "Gefängnisse sind einvernehmlich und ohne Monopolisierung unter den zehn führenden Allianzen zu verteilen, da diese die Hauptverantwortung für serverübergreifende Kämpfe tragen."
+      ],
+      [
+        "FREIER KAMPF UM AKADEMIEN UND LABORE",
+        "Alle Allianzen dürfen unabhängig vom Rang um Akademien und Labore kämpfen. Kämpfe müssen auf diese Einrichtungen beschränkt bleiben; Angriffe und Aufklärung gegen Hauptquartiere anderer Spieler sind verboten. Dies fördert Kampfinteresse, taktische Fähigkeiten und gesunden Wettbewerb."
+      ],
+      [
+        "NATÜRLICHE AUSLESE UND BÜNDELUNG DER KRÄFTE",
+        "Führende Allianzen dürfen unter Einhaltung der übrigen Regeln Allianzen außerhalb der TOP-10 angreifen. So können aktive Spieler starken, organisierten Allianzen beitreten, die gegen andere Server kämpfen können. Kleinere Allianzen können keine ebenso bedeutende Rolle spielen. Jede Allianz darf wachsen und um einen Spitzenplatz kämpfen. Der Stärkste überlebt: Unser Ziel ist die Bündelung der Kampfkraft der Region."
+      ],
+      [
+        "EINHEIT DER FÜHRENDEN ALLIANZEN",
+        "TOP-10-Allianzen dürfen nicht gegeneinander um Vorherrschaft kämpfen, außer bei vereinbarten Objektkämpfen nach Regel 3 und offiziellen Events nach Regel 1. Streitigkeiten sind diplomatisch zu lösen und Kräfte für serverübergreifende Siege zu vereinen. Regionale Interessen stehen über persönlichen Ambitionen."
+      ],
+      [
+        "STATUS DER ALLIANZAKADEMIEN",
+        "Führende Allianzen dürfen Ausbildungsakademien gründen, diese genießen jedoch keinen automatischen Schutz. Jede Allianz darf TOP-10-Akademien unter Einhaltung der gemeinsamen Regeln angreifen. Ein Angriff auf eine Akademie darf kein Grund für einen Konflikt mit ihrer Hauptallianz sein."
+      ]
+    ],
+    "closingTitle": "WIR HABEN NICHT KAPITULIERT UND WERDEN ES NIE TUN!",
+    "closingText": "AUFRUF AN REGION 189\nWir glauben, dass die derzeitigen NAP-10/12-Mitglieder ihre Privilegien bewahren wollen, statt Gleichberechtigung zu akzeptieren. Wir lehnen diese Ordnung ab. CopStars (CPS) ruft führende Spieler, Allianzleiter und alle Anhänger des Fairplays auf, sich der neuen SR-189-Koalition anzuschließen und gemeinsame Regeln, offene Diskussionen, gemeinsame Entscheidungen, gerechte Verteilung und freie Allianzwahl zu unterstützen.\nWir fordern ein Ende der Unterstützung für die Expansion der Allianz 707 und ihre diplomatische Isolation innerhalb des Spiels, bis sie faire gemeinsame Regeln akzeptiert. Keine Allianz darf die Zukunft des Servers diktieren. Offenheit, Demokratie und Gleichberechtigung müssen Vorrang haben.\nSie versuchten uns zu vernichten und scheiterten. Sie werden niemals Erfolg haben! Gemeinsam werden wir stärker. Wir sind zum Dialog bereit, nicht zur Unterwerfung, und zur Zusammenarbeit auf Augenhöhe. Allianz 707 muss faire Bedingungen akzeptieren oder sich vereintem Widerstand im Spiel gegen ihre Vorherrschaft bis hin zur Auflösung der Allianz stellen. Äußert eure Meinung. Wir sind gegen Machtmissbrauch, nicht gegen starke Allianzen.\n\nUNSERE STÄRKE IST EINHEIT! UNSER ZIEL IST GERECHTIGKEIT!\nEINE REGION. GEMEINSAME REGELN. EIN GEMEINSAMER SIEG."
+  },
+  "fr": {
+    "subtitle": "RÉGION 189 — POUR LE FAIR-PLAY !",
+    "intro": "NOTRE POSITION\nCPS défend le fair-play, l’égalité et une saine compétition dans la région 189. Nous nous opposons à l’expansion de l’alliance 707 et aux règles actuelles du NAP-10/12 qui, selon nous, servent surtout les joueurs privilégiés des alliances dominantes. La région appartient à tous ses joueurs. Chacun doit pouvoir progresser, choisir son alliance et exprimer son opinion.\n\nNOTRE ADVERSAIRE COMMUN EST UN AUTRE SERVEUR\nDe nombreux joueurs craignent de s’exprimer ; d’autres ne veulent pas combattre. Police Chief n’est pas un simulateur agricole, mais un jeu de combat, de stratégie et de coopération. Notre puissance militaire doit être dirigée contre les autres serveurs plutôt que gaspillée dans des guerres internes. La compétition interne doit renforcer notre région.\n\nNAP ET RÈGLES DU SERVEUR\nLe NAP (Non-Aggression Pact) est un pacte de non-agression entre les principales alliances visant à prévenir les guerres internes, préserver leur puissance militaire et préparer les combats interserveurs. Selon nous, le NAP-10/12 actuel détourne cet objectif en devenant un instrument de domination au profit de quelques alliances.\nLe NAP est un pacte de non-agression, pas un organe de gouvernement ! L’adhésion ne doit pas permettre d’imposer unilatéralement des règles, de monopoliser les installations stratégiques, d’accorder des privilèges aux académies ou de restreindre les autres joueurs sans débat ouvert.\n\nSR-189 — SERVER RULES 189\nCPS propose des règles communes à tous, indépendamment de la puissance, de la taille, de la nationalité, de la langue ou du classement. Nos principes sont l’ouverture, la transparence, la prise de décision démocratique, l’égalité devant les règles, la compétition équitable, la répartition équitable des installations stratégiques, la responsabilité collective et la priorité aux victoires interserveurs.\nLe NAP-10 ne peut exister dans le cadre du SR-189 que comme pacte de non-agression entre les principales alliances. Toutes les autres relations relèvent des règles du serveur. Les règles du serveur doivent définir le NAP, et non l’inverse !\n\nRÈGLES PRINCIPALES DU SR-189",
+    "sections": [
+      [
+        "PROTECTION DES CASES DE RESSOURCES",
+        "Il est interdit d’attaquer les joueurs qui collectent des ressources, quelle que soit leur alliance ou leur zone de collecte. Seuls les événements officiels d’élimination de troupes font exception : ces attaques sont alors autorisées pour tous."
+      ],
+      [
+        "RÉPARTITION ÉQUITABLE DES PRISONS",
+        "Les prisons doivent être réparties équitablement entre les dix principales alliances, par accord commun et sans monopole, car ces alliances assumeront la responsabilité principale des combats interserveurs."
+      ],
+      [
+        "LIBRE COMBAT POUR LES ACADÉMIES ET LES LABORATOIRES",
+        "Toutes les alliances peuvent combattre pour les académies et les laboratoires, quel que soit leur classement. Les combats doivent se limiter à ces installations ; les attaques et la reconnaissance des quartiers généraux des autres joueurs sont interdites. Cela favorise l’intérêt pour les combats, les compétences tactiques et une saine compétition."
+      ],
+      [
+        "SÉLECTION NATURELLE ET CONSOLIDATION DES FORCES",
+        "Les principales alliances peuvent attaquer celles qui ne figurent pas dans le TOP-10, dans le respect des autres règles. Cela encourage les joueurs actifs à rejoindre des alliances fortes et organisées, capables de combattre les autres serveurs. Les petites alliances ne peuvent jouer un rôle aussi important. Chaque alliance peut progresser et viser les premières places. La loi du plus fort s’applique : notre objectif est de réunir le potentiel militaire de la région."
+      ],
+      [
+        "UNITÉ DES PRINCIPALES ALLIANCES",
+        "Les alliances du TOP-10 ne doivent pas s’affronter pour la domination, sauf lors des combats convenus pour les installations selon la règle 3 et des événements officiels selon la règle 1. Les différends doivent être réglés diplomatiquement et les forces réunies pour les victoires interserveurs. Les intérêts de la région priment sur les ambitions personnelles."
+      ],
+      [
+        "STATUT DES ACADÉMIES D’ALLIANCE",
+        "Les principales alliances peuvent créer des académies de formation, mais celles-ci ne bénéficient d’aucune protection automatique. Toute alliance peut attaquer les académies du TOP-10 dans le respect des règles communes. Une attaque contre une académie ne doit pas justifier un conflit avec son alliance principale."
+      ]
+    ],
+    "closingTitle": "NOUS N’AVONS PAS CAPITULÉ ET NE CAPITULERONS JAMAIS !",
+    "closingText": "APPEL AUX JOUEURS DE LA RÉGION 189\nNous estimons que les membres actuels du NAP-10/12 cherchent à préserver leurs privilèges plutôt qu’à accepter l’égalité. Nous rejetons cet ordre. CopStars (CPS) appelle les meilleurs joueurs, les chefs d’alliance et les partisans du fair-play à rejoindre la nouvelle coalition SR-189 et à soutenir les règles communes, le débat ouvert, les décisions collectives, la répartition équitable et la liberté de choisir son alliance.\nNous appelons à cesser de soutenir l’expansion de l’alliance 707 et à l’isoler diplomatiquement dans le jeu jusqu’à ce qu’elle accepte des règles communes équitables. Aucune alliance ne doit dicter l’avenir du serveur. L’ouverture, la démocratie et l’égalité doivent prévaloir.\nIls ont essayé de nous détruire et ont échoué. Ils n’y parviendront jamais ! Ensemble, nous serons plus forts. Nous sommes prêts au dialogue, pas à la soumission, et à une coopération sur un pied d’égalité. L’alliance 707 doit accepter des conditions équitables ou faire face à une opposition unie dans le jeu visant à mettre fin à sa domination, jusqu’à sa dissolution. Exprimez votre opinion. Nous combattons les abus de pouvoir, pas les alliances fortes.\n\nNOTRE FORCE EST L’UNITÉ ! NOTRE OBJECTIF EST LA JUSTICE !\nUNE RÉGION. DES RÈGLES COMMUNES. UNE VICTOIRE COMMUNE."
+  },
+  "ja": {
+    "subtitle": "地域189 — 公平なゲームのために！",
+    "intro": "私たちの立場\nCPSは地域189における公平なプレイ、平等、健全な競争を支持します。同盟707の勢力拡大と、上位同盟の特権的なプレイヤーの利益を優先していると私たちが考える現行のNAP-10/12のルールに反対します。地域はすべてのプレイヤーのものです。誰もが成長し、同盟を自由に選び、意見を表明できるべきです。\n\n共通の敵は他のサーバーです\n意見を述べることを恐れるプレイヤーも、戦闘を望まないプレイヤーもいます。しかし、Police Chiefは農業シミュレーションではなく、戦闘、戦略、チームワークのゲームです。内戦で戦力を消耗するのではなく、他のサーバーとの戦いに力を注ぐべきです。地域内の競争は地域を強化するものでなければなりません。\n\nNAPとサーバールール\nNAP（Non-Aggression Pact）とは、内戦を防ぎ、戦力を維持し、サーバー間戦闘に備えるための上位同盟間の不可侵協定です。私たちは現行のNAP-10/12がその目的をゆがめ、一部の同盟の利益のためにサーバーを支配する手段になっていると考えます。\nNAPは不可侵協定であり、統治機関ではありません！ 加盟を理由に一方的にルールを定め、戦略施設を独占し、育成同盟に特権を与えたり、公開討議なしに他のプレイヤーを制限したりしてはなりません。\n\nSR-189 — SERVER RULES 189\nCPSは戦力、規模、国籍、言語、順位に関係なく、全員に共通するルールを提案します。基本原則は公開性、透明性、民主的な意思決定、ルールの下での平等、公平な競争、戦略施設の公平な配分、共同責任、そしてサーバー間戦闘での勝利の優先です。\nNAP-10はSR-189の枠内で、上位同盟間の不可侵協定としてのみ存在できます。その他の関係はサーバー共通ルールに従います。NAPがサーバールールを決めるのではなく、サーバールールがNAPを規定するべきです！\n\nSR-189の主要ルール",
+    "sections": [
+      [
+        "資源タイルの保護",
+        "所属同盟や採集地域に関係なく、資源タイルで資源を採集しているプレイヤーへの攻撃は禁止です。唯一の例外は公式の部隊撃破イベントであり、その期間は全員に攻撃が認められます。"
+      ],
+      [
+        "刑務所の公平な配分",
+        "刑務所は上位10同盟の合意に基づき、独占を避けて公平に配分します。これらの同盟がサーバー間戦闘で主な責任を担うためです。"
+      ],
+      [
+        "アカデミーと研究所をめぐる自由な戦闘",
+        "順位に関係なく、すべての同盟がアカデミーと研究所をめぐって戦う権利を持ちます。戦闘は対象施設に限定し、他のプレイヤーの本部への攻撃や偵察は禁止します。これは戦闘への関心、戦術能力、健全な競争を維持するためです。"
+      ],
+      [
+        "自然淘汰と戦力の結集",
+        "上位同盟は他のルールを守る限り、TOP-10以外の同盟を攻撃できます。これにより活動的なプレイヤーが他のサーバーと戦える強力で組織的な同盟に集まります。小規模同盟は同等の役割を果たすことが困難です。すべての同盟には成長し上位を目指す権利があります。強者が生き残るという自然の法則に従い、地域の戦力を結集することが目的です。"
+      ],
+      [
+        "上位同盟の団結",
+        "TOP-10同盟は支配権をめぐって互いに戦ってはなりません。ただし第3条に基づく合意された施設戦と第1条の公式イベントは例外です。対立は外交で解決し、サーバー間戦闘での勝利に向けて団結します。地域の利益は個人の野心に優先します。"
+      ],
+      [
+        "育成同盟の位置づけ",
+        "上位同盟はプレイヤー育成のためのアカデミー同盟を設立できますが、自動的に保護されるわけではありません。すべての同盟は共通ルールに従ってTOP-10の育成同盟を攻撃できます。育成同盟への攻撃を親同盟との紛争の理由にしてはなりません。"
+      ]
+    ],
+    "closingTitle": "私たちは降伏しなかった。そして決して降伏しない！",
+    "closingText": "地域189のプレイヤーの皆さんへ\n現行のNAP-10/12の加盟同盟は平等よりも特権の維持を望んでいると私たちは考えます。この体制を認めません。CopStars（CPS）は上位プレイヤー、同盟の指導者、公平なプレイを支持するすべての人に、新しいSR-189連合への参加を呼びかけます。共通ルール、公開討議、共同意思決定、公平な配分、同盟選択の自由を支持します。\n同盟707の勢力拡大への支持をやめ、公平な共通ルールを受け入れるまでゲーム内で外交的に孤立させることを呼びかけます。いかなる同盟もサーバーの未来を独断で決めてはなりません。公開性、民主主義、平等が優先されるべきです。\n彼らは私たちを壊滅させようとしましたが、失敗しました。今後も成功することはありません！ 共にさらに強くなりましょう。私たちは対話と対等な協力には応じますが、服従はしません。同盟707は公平な条件を受け入れるか、その支配の終結、さらには同盟の解体を目指すゲーム内での団結した対抗に直面することになります。意見を述べることを恐れないでください。私たちは強い同盟ではなく、力の乱用に反対します。\n\n私たちの力は団結！ 目標は公平さ！\n一つの地域。共通のルール。共通の勝利。"
+  }
 };
 
 function setLanguage(lang) {
   if (!translations[lang]) lang = "en";
   const t = translations[lang];
   document.documentElement.lang = lang;
+  const labels = {ru: ["АЛЬЯНС COPSTARS (CPS)", "Единые правила сервера"], en: ["COPSTARS (CPS) ALLIANCE", "Server Rules"], tr: ["COPSTARS (CPS) İTTİFAKI", "Ortak Sunucu Kuralları"], ko: ["COPSTARS (CPS) 동맹", "서버 공통 규칙"], de: ["ALLIANZ COPSTARS (CPS)", "Gemeinsame Serverregeln"], ja: ["COPSTARS (CPS) 同盟", "サーバー共通ルール"], fr: ["ALLIANCE COPSTARS (CPS)", "Règles communes du serveur"]};
+  document.getElementById("allianceName").textContent = labels[lang][0];
+  document.getElementById("rulesName").textContent = labels[lang][1];
   document.getElementById("subtitle").textContent = t.subtitle;
   document.getElementById("intro").textContent = t.intro;
   document.getElementById("closingTitle").textContent = t.closingTitle;
